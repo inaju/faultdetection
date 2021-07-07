@@ -29,7 +29,6 @@ DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
 
 ALLOWED_HOSTS = ['faultdetection.herokuapp.com']
-heroku config: set DJANGO_SECRET_KEY = "eu09(ilk6@4sfdofb=d43^#$b_gY2ht@vad*$ehh9-)3u_83+y%(+phh&=dk23kfd"
 
 # Application definition
 
