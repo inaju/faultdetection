@@ -10,23 +10,26 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
+import os
 import dj_database_url
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
+SECRET_KEY = os.environ['SECRET_KEY']
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-w_0gv&d-4+ibp81#dz2zt^&l-k=%n0mya6mks2%j722$a1vgp$'
-
+# SECRET_KEY = os.environ.get(
+#     'DJANGO_SECRET_KEY', 'cg#p$g+j9tax!#a3cup@1$8obt2_+&k3q+pmu)5%asj6yjpkag')
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
-ALLOWED_HOSTS = []
+
+ALLOWED_HOSTS = ['faultdetection.herokuapp.com']
+heroku config: set DJANGO_SECRET_KEY = "eu09(ilk6@4sfdofb=d43^#$b_gY2ht@vad*$ehh9-)3u_83+y%(+phh&=dk23kfd"
 
 # Application definition
 
