@@ -17,18 +17,19 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = os.environ['SECRET_KEY']
+# SECRET_KEY = os.environ['SECRET_KEY']
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-# SECRET_KEY = os.environ.get(
-#     'DJANGO_SECRET_KEY', 'cg#p$g+j9tax!#a3cup@1$8obt2_+&k3q+pmu)5%asj6yjpkag')
+SECRET_KEY = os.environ.get(
+    'SECRET_KEY', 'cg#p$g+j9tax!#a3cup@1$8obt2_+&k3q+pmu)5%asj6yjpkag')
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
 
-ALLOWED_HOSTS = ['faultdetection.herokuapp.com']
+ALLOWED_HOSTS = ['faultdetection.herokuapp.com', '127.0.0.1']
 
 # Application definition
 
